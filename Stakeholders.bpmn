@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0c1jrvz" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="9.2.0">
+  <bpmn:collaboration id="Collaboration_0sbttzm">
+    <bpmn:participant id="Participant_1wpn5n7" name="Stakeholders" processRef="Process_1eurgtc" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1eurgtc" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_12mg18u">
+      <bpmn:lane id="Lane_0wrauuq" name="Planejamento">
+        <bpmn:flowNodeRef>StartEvent_033j6bj</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1biu73l</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0gbk8hq" name="Execução">
+        <bpmn:flowNodeRef>Activity_0ogago3</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_195rj6k" name="Monitorar">
+        <bpmn:flowNodeRef>Activity_0xhryi9</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_033j6bj">
+      <bpmn:outgoing>Flow_07bt7yb</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1biu73l" name="Engajamento">
+      <bpmn:incoming>Flow_07bt7yb</bpmn:incoming>
+      <bpmn:outgoing>Flow_1e3gptu</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0ogago3" name="Gerenciar engajamento">
+      <bpmn:incoming>Flow_1e3gptu</bpmn:incoming>
+      <bpmn:outgoing>Flow_12ebklp</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_0xhryi9" name="Monitorar o engajamento">
+      <bpmn:incoming>Flow_12ebklp</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_07bt7yb" sourceRef="StartEvent_033j6bj" targetRef="Activity_1biu73l" />
+    <bpmn:sequenceFlow id="Flow_1e3gptu" sourceRef="Activity_1biu73l" targetRef="Activity_0ogago3" />
+    <bpmn:sequenceFlow id="Flow_12ebklp" sourceRef="Activity_0ogago3" targetRef="Activity_0xhryi9" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0sbttzm">
+      <bpmndi:BPMNShape id="Participant_1wpn5n7_di" bpmnElement="Participant_1wpn5n7" isHorizontal="true">
+        <dc:Bounds x="156" y="61" width="600" height="529" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0wrauuq_di" bpmnElement="Lane_0wrauuq" isHorizontal="true">
+        <dc:Bounds x="186" y="61" width="570" height="199" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0gbk8hq_di" bpmnElement="Lane_0gbk8hq" isHorizontal="true">
+        <dc:Bounds x="186" y="260" width="570" height="171" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_195rj6k_di" bpmnElement="Lane_195rj6k" isHorizontal="true">
+        <dc:Bounds x="186" y="431" width="570" height="159" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_07bt7yb_di" bpmnElement="Flow_07bt7yb">
+        <di:waypoint x="298" y="170" />
+        <di:waypoint x="350" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1e3gptu_di" bpmnElement="Flow_1e3gptu">
+        <di:waypoint x="400" y="210" />
+        <di:waypoint x="400" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12ebklp_di" bpmnElement="Flow_12ebklp">
+        <di:waypoint x="400" y="390" />
+        <di:waypoint x="400" y="460" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_033j6bj">
+        <dc:Bounds x="262" y="152" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1biu73l_di" bpmnElement="Activity_1biu73l">
+        <dc:Bounds x="350" y="130" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ogago3_di" bpmnElement="Activity_0ogago3">
+        <dc:Bounds x="350" y="310" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xhryi9_di" bpmnElement="Activity_0xhryi9">
+        <dc:Bounds x="350" y="460" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
